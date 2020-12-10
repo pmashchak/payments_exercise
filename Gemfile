@@ -23,10 +23,14 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry'
   gem 'bootsnap'
+  gem "factory_bot_rails", "~> 5.1.1", require: false
+  gem "faker", require: false
 end
 
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'listen'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner-active_record'
 end
