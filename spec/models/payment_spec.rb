@@ -25,11 +25,12 @@ describe Payment, type: :model do
 
     before do
       subject.loan = loan
+      subject.payment_amount += loan.due_amount
     end
 
     it 'checks compares to load due payment' do
       is_expected.not_to be_valid
-      expect(subject.errors.full_messages).to include('Payment amount less or equal funded_amount')
+      expect(subject.errors.full_messages).to include('Payment amount less or equal due_amount')
     end
   end
 end

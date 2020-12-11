@@ -14,8 +14,8 @@ class Payment < ActiveRecord::Base
 
   def check_payment_amount
     return if loan.nil? || due_amount.nil?
-    if due_amount + payment_amount > funded_amount
-      errors.add(:payment_amount, 'less or equal funded_amount')
+    if due_amount < payment_amount
+      errors.add(:payment_amount, 'less or equal due_amount')
     end
   end
 end

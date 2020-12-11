@@ -10,8 +10,8 @@ describe Loan, type: :model do
 
   context 'funded_vs_due_amounts' do
     let(:loan) { build(:loan,
-                           funded_amount: Faker::Number.decimal(l_digits: 2),
-                           due_amount:    Faker::Number.decimal(l_digits: 4) ) }
+                       funded_amount: Faker::Number.decimal(l_digits: 2),
+                       due_amount:    Faker::Number.decimal(l_digits: 4) ) }
 
     it 'checks due_amount' do
       expect(loan).not_to be_valid
